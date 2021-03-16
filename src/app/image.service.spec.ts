@@ -16,6 +16,12 @@ describe('ImageService', () => {
       let imagenes = service.getImages();
       expect(imagenes.length).toEqual(5);
     });
+
+    it('Debe retornar mas de un elemento en la lista',() =>{
+      let imagenes = service.getImages();
+      let valor = imagenes.length;
+      expect(valor>=1).toBeTruthy;
+    });
   });
 
   describe('getImage(x)',() =>{
@@ -30,7 +36,7 @@ describe('ImageService', () => {
       let imagene = service.getImage(100);
       expect(imagene).toEqual(undefined);
     });
+
+    
   });
 });
-
-

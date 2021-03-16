@@ -32,14 +32,13 @@ describe('ImageGalleryComponent', () => {
     fixture.detectChanges();
   });
 
+
   it('Debe crear el componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Debe existir la variable allImages y contener todas las imagenes', () =>{
-    expect(component.allImages).toEqual(Imagenes);
-  });
-
+  describe('funcion de Botones',() =>{
+    
   it('Debe existir un boton para filtrar por Gato', () => {
     expect(fixture.debugElement.nativeElement.querySelector('#btnGato'));
   });
@@ -52,4 +51,17 @@ describe('ImageGalleryComponent', () => {
     expect(fixture.debugElement.nativeElement.querySelector('#btnAll'));
   });
 
+  
+  it('Debe existir la variable allImages y contener todas las imagenes', () =>{
+    expect(component.allImages).toEqual(Imagenes);
+  });
+  });
+
+  
+  it('Debe existir un elemento contenedor de la clase img para el tamano de las imagenes y color de fondo ', () =>{
+    expect(fixture.nativeElement.querySelector('.img')).toBeDefined();
+   });
+
+
 });
+
