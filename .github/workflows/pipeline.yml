@@ -33,6 +33,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          
+      - name: Sonar Build Breaker
+        uses: jkumar19/sonar-build-breaker@v1.0.0
+        with:
+         sonar_url: "https://sonarcloud.io"
+         sonar_branch: "master"
+         sonar_token: ${{ secrets.SONAR_TOKEN }}
+         project_key: "lgallegom_PetBook"
+
       
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
