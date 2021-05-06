@@ -41,6 +41,7 @@ jobs:
          sonar_branch: "master"
          sonar_token: ${{ secrets.SONAR_TOKEN }}
          project_key: "lgallegom_PetBook"
+         
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
